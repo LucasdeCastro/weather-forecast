@@ -16,12 +16,12 @@ const useWeather = (location) => {
         longitude,
       }, unity);
 
-      if (data.error) {
-        setError(data.error);
-        return;
-      }
-
       if (data) {
+        if (data.error) {
+          setError(data.error);
+          return;
+        }
+
         const mappedValues = mapWeatherToView(data.list);
         const days = Object.entries(mappedValues.byDay)
           .sort((a, b) => new Date(a[0]) - new Date(b[0]));

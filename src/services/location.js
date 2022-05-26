@@ -20,21 +20,24 @@ class Location {
 
   async getLocationFromAPI() {
     if (!this.query) { return null; }
+    try {
+      const url = createURL('/geo/1.0/direct');
+      url.searchParams.set('limit', 1);
+      url.searchParams.set('q', decodeURI(this.query));
+      const response = await fetch(url);
+      const data = await response.json();
 
-    const url = createURL('/geo/1.0/direct');
-    url.searchParams.set('limit', 1);
-    url.searchParams.set('q', decodeURI(this.query));
-    const response = await fetch(url);
-    const data = await response.json();
+      if (!data || data.length === 0) return null;
 
-    if (!data || data.length === 0) return null;
-
-    return {
-      coords: {
-        latitude: data[0].lat,
-        longitude: data[0].lon,
-      },
-    };
+      return {
+        coords: {
+          latitude: data[0].lat,
+          longitude: data[0].lon,
+        },
+      };
+    } catch (err) {
+      return null;
+    }
   }
 
   async getLocation() {
