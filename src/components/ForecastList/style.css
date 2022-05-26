@@ -1,0 +1,56 @@
+.forecast-list-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+  cursor: pointer;
+  animation: fade-in ease-in-out 500ms;
+}
+
+.forecast-list-items:hover {
+  background-color: var(--end-color);
+}
+
+.forecast-list-items img {
+  width: 50px;
+}
+
+.item-active {
+  background-color: var(--end-color);
+}
+
+.hour-list {
+  width: 100%;
+  overflow-x: scroll;
+  padding-bottom: 10px;
+  display: flex;
+}
+
+.hour-item {
+  min-width: 100px;
+  max-width: 150px;
+}
+
+.hour-item p{
+  font-size: 0.8rem;
+}
+
+.hour-item h2 {
+  margin: 0.5rem;
+}
+
+.temperature {
+  font-size: 15vmin;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .forecast-list-items:not(.hour-item) {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}

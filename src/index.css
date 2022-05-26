@@ -1,0 +1,62 @@
+:root {
+  --start-color: rgba(10,35,139,1);
+  --end-color: rgba(242,140,60,1);
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--start-color);
+  background: linear-gradient(-45deg, var(--end-color) 0%, var(--start-color) 80%);
+  background-size: auto 100%;
+  background-repeat: no-repeat no-repeat;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.weather-app {
+  margin: 0 auto;
+  padding: 20px 10px;
+  width: 90%;
+  margin-top: 0px;
+  border-radius: 3px;
+  color: #fff;
+  animation: fade-in ease-in-out 1000ms;
+}
+
+.forecast-list-hour {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  overflow-x: scroll;
+  padding: 1rem 0;
+}
+
+.forecast-list-day {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(1fr, 200px);
+}
+
+@media only screen and (max-width: 800px) { 
+  .forecast-list-day {
+    grid-auto-flow: row;
+    grid-auto-columns: 100%;
+  }
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0.1;
+	}
+}

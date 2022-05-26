@@ -1,0 +1,28 @@
+
+.unit-control {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.unit-control button {
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: var(--end-color);
+  border: none;
+  border-radius: 3px;
+  width: 45px;
+  height: 40px;
+  opacity: 0.2;
+  cursor: pointer;
+  transition: opacity linear 0.2s;
+}
+
+.unit-control button:hover { 
+  opacity: 0.6;
+}
+
+.unit-control button:disabled {
+  opacity: 1;
+}

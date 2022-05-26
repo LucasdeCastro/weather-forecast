@@ -1,0 +1,59 @@
+.weather-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-card-info {
+  display: flex;
+}
+
+.weather-card-info>div {
+  flex: 1;
+}
+
+.weather-card-info .card-info-resume {
+  display: flex;
+  align-items: center;
+}
+
+.card-image {
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.card-info-detail {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card-info-detail p { 
+  font-size: 0.8rem;
+}
+
+.card-info-detail span {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 800px) {
+  .temperature {
+    font-size: 30vmin;
+  }
+
+  .weather-card-info {
+    flex-direction: column;
+  }
+
+  .weather-card-info>div {
+    margin: 1rem 0;
+  }
+
+  .card-info-detail span {
+    font-size: 1.5rem;
+  }
+}
