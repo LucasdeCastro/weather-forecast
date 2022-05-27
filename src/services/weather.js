@@ -1,8 +1,8 @@
 import { createURL } from '../utils/url';
 
-const getWeatherByLocation = async ({ latitude, longitude }, unity) => {
+const getWeatherByLocation = async ({ latitude, longitude } = {}, unity = null) => {
   try {
-    if (latitude == null || longitude == null) { return null; }
+    if (latitude == null || longitude == null || unity == null) { return null; }
 
     const url = createURL('/data/2.5/forecast');
 

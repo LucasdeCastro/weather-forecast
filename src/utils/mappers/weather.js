@@ -1,10 +1,10 @@
-const mapItemByHour = (item) => ({
+export const mapItemByHour = (item) => ({
   ...item,
-  weather: item.weather[0],
-  temp: parseInt(item.main.temp, 10),
+  weather: item?.weather[0],
+  temp: parseInt(item?.main?.temp, 10),
 });
 
-const mapItemByDay = (item, current) => {
+export const mapItemByDay = (item, current) => {
   const {
     main: {
       temp,
