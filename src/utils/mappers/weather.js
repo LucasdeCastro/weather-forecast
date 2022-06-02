@@ -52,11 +52,16 @@ export const mapWeatherToView = (list) => {
   return mapped;
 };
 
-export const mapCityToView = ({ sunrise, sunset, ...city }) => ({
-  ...city,
-  sunrise: `${new Date(sunrise * 1000).toLocaleString().substr(11, 4)} am`,
-  sunset: `${new Date(sunset * 1000).toLocaleString().substr(11, 4)} pm`,
-});
+export const mapCityToView = ({ sunrise, sunset, ...city }) => {
+  const [, rise] = new Date(sunrise * 1000).toLocaleString().split(', ');
+  const [, set] = new Date(sunset * 1000).toLocaleString().split(', ');
+
+  return {
+    ...city,
+    sunrise: rise,
+    sunset: set,
+  };
+};
 
 export default {
   mapWeatherToView,

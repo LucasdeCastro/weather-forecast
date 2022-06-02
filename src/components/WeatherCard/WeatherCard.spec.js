@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  render, fireEvent, screen,
+  render, screen,
 } from '@testing-library/react';
 import WeatherCard from './index';
 

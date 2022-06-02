@@ -78,7 +78,7 @@ describe('mappers - weather', () => {
     expect(
       mapCityToView(mock),
     ).toMatchObject(
-      { a: 10, sunrise: '10:4 am', sunset: '10:4 pm' },
+      { a: 10, sunrise: '10:42:51 PM', sunset: '10:42:51 PM' },
     );
   });
 });
